@@ -6,7 +6,6 @@ import { stepper } from "../utilities/constants/stepper";
 
 //do not hardcode any strings, why is it in caps
 //reduce size of blue indicator
-//put date under today tomorrow
 
 const screenStyle = { flex: 1, paddingTop: 48, paddingHorizontal: 24 };
 
@@ -20,7 +19,7 @@ const FirstRoute = (date) => () =>
 const SecondRoute = (date) => () =>
   (
     <View style={screenStyle}>
-      <Stepper config={stepper(date)}  />
+      <Stepper config={stepper(date)} />
     </View>
   );
 const ThirdRoute = (date) => () =>

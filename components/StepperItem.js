@@ -1,4 +1,8 @@
-import { View, Text, StyleSheet, Image, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
+
+// create colours const
+//stem is deviated
+//make the dot icon same
 
 const style = StyleSheet.create({
   stepperHolder: {
@@ -7,26 +11,26 @@ const style = StyleSheet.create({
     paddingHorizontal: 16,
   },
   time: {
-    color: 'grey',
-    fontWeight: 'bold',
-    right: -4,
+    color: '#000000',
+    fontWeight: '400',
+    fontSize: 18,
+    lineHeight: 27,
     textAlign: 'right',
-    width: 48,
   },
   dotStemHolder: {
     flex: 2,
     alignItems: 'center',
   },
   dot: {
-    height: 18,
-    width: 18,
-    borderRadius: 9,
+    height: 26,
+    width: 26,
+    borderRadius: 50,
     backgroundColor: 'white',
     borderWidth: 6,
     borderColor: 'grey',
   },
   selectedDot: {
-    borderColor: 'green',
+    borderColor: '#0373F3',
   },
   stem: {
     display: 'flex',
@@ -34,12 +38,12 @@ const style = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     height: 64,
-    width: 4,
+    width: 2,
     backgroundColor: 'grey',
   },
   stemProgressed: {
     display: 'flex',
-    backgroundColor: 'green',
+    backgroundColor: '#0373F3',
   },
   stemDefault: {
     display: 'flex',
@@ -59,13 +63,16 @@ const style = StyleSheet.create({
     paddingHorizontal: 4,
   },
   title: {
-    color: 'blue',
-    fontWeight: 'bold',
+    color: '#000000',
+    fontWeight: '600',
     fontSize: 16,
+    lineHeight:24
   },
   subtitle: {
-    color: 'grey',
-    fontWeight: 'bold',
+    color: '#B1B1B1',
+    fontWeight: '400',
+    fontSize:16,
+    lineHeight:24
   },
   icon: {
     height: 40,

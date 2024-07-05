@@ -1,16 +1,14 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomePage from "./screens/HomePage";
 import Wallet from "./screens/Wallet";
-import Guide from "./screens/Guide/Guide";
+import Guide from "./screens/Guide";
 import Chart from "./screens/Chart";
 import { PaperProvider } from "react-native-paper";
-import { TabBar } from "react-native-tab-view";
 import { CHART_ICON, CHART_ICON_FOCUSED, GUIDE_ICON, GUIDE_ICON_FOCUSED, HOME_ICON, HOME_ICON_FOCUSED, WALLET_ICON, WALLET_ICON_FOCUSED } from "./utilities/constants/const";
 
-//do not show guide at the top of guide screen
-
+// remove unnescessary styles
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -22,7 +20,6 @@ export default function App() {
           tabBarStyle: {borderTopLeftRadius: 24, borderTopRightRadius: 24,backgroundColor: '#FFFFFF', height:100, position:'absolute'},
           tabBarIcon: ({ focused }) => {
             let icon;
-
             if (route.name === 'Home') {
               icon = focused? HOME_ICON_FOCUSED :HOME_ICON 
             } else if (route.name === 'Wallet') {
@@ -39,6 +36,9 @@ export default function App() {
           },
           tabBarActiveTintColor: '#0373F3',
           tabBarInactiveTintColor: 'gray',
+          tabBarLabelStyle: {
+            fontSize: 14,
+          },
         })}>
           <Tab.Screen  name="Home" component={HomePage} />
           <Tab.Screen name="Wallet" component={Wallet} />

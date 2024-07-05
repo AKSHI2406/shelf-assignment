@@ -1,3 +1,6 @@
+import { Icon } from "react-native-paper";
+import { COCONUT_ICON, GOLDEN_ICON, ISLANDS_ICON, MALDIVES_ICON } from "./const";
+
 export const stepper = (date) => {
   const d1 = new Date(date);
   d1.setHours(0);
@@ -19,28 +22,34 @@ export const stepper = (date) => {
   d4.setMinutes(59);
   d4.setSeconds(0);
 
- return [
+  return [
     {
       time: d1,
       title: "Maldives",
-      subtitle: "subtitle",
+      label: "00:00",
+      subtitle: "Save the Turtles",
+      icon: MALDIVES_ICON
     },
     {
       time: d2,
-      title: "Golden Beach",
-      subtitle: "subtitle",
+      title: "Golden beach",
+      label: "08:00",
+      subtitle: "Surfing on the sea",
+      icon: GOLDEN_ICON
     },
     {
       time: d3,
+      title: "Coconut grove",
       label: "16:00",
-      title: "Coconut Grove",
-      subtitle: "subtitle",
+      subtitle: "BBQ party by the sea",
+      icon: COCONUT_ICON
     },
     {
       time: d4,
       label: "23:59",
       title: "Maldives Islands",
-      subtitle: "subtitle",
+      subtitle: "Sea blowing",
+      icon: ISLANDS_ICON
     },
   ];
 };

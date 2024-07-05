@@ -1,9 +1,6 @@
-import { useEffect, useState } from "react";
-import { View, Text } from "react-native";
-
+import { View } from "react-native";
 import StepperItem from "./StepperItem";
 //delta is harcoded
-//pass icon
 
 const Stepper = ({ config }) => {
   const stepperData = config?.map((d, i) => {
@@ -13,7 +10,7 @@ const Stepper = ({ config }) => {
       if (currTime.getTime() >= d.time.getTime() + delta * 60 * 60 * 1000) {
         d.progress = 100;
         d.selected = true;
-      } else{
+      } else {
         d.progress = ((currTime.getHours() % delta) / delta) * 100;
         d.selected = true;
       }
@@ -23,17 +20,9 @@ const Stepper = ({ config }) => {
     }
     return d;
   });
-  // console.log(currTime , d.time)
-
-  // return d;
-  // });
-
-  // console.log(stepperData);
 
   return (
     <View>
-      {/* <Text>{JSON.stringify(newDate)}</Text>
-    <Text>{JSON.stringify(stepperData[0].time)}hi</Text> */}
       {stepperData?.map((d, idx) => (
         <StepperItem
           key={d.time.toString()}
@@ -43,6 +32,7 @@ const Stepper = ({ config }) => {
           title={d.title}
           subtitle={d.subtitle}
           time={d.label}
+          icon={d.icon}
         />
       ))}
     </View>
