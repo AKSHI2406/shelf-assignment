@@ -1,6 +1,5 @@
 import { View } from "react-native";
 import StepperItem from "./StepperItem";
-//delta is harcoded
 
 const Stepper = ({ config }) => {
   const stepperData = config?.map((d, i) => {

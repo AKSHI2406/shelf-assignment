@@ -3,11 +3,17 @@ import React, { useState } from "react";
 import { SceneMap, TabBar, TabView } from "react-native-tab-view";
 import Stepper from "./Stepper";
 import { stepper } from "../utilities/constants/stepper";
+import names from "../utilities/constants/names";
+import { color } from "../utilities/constants/colors";
+import fonts from "../utilities/constants/fonts";
 
-//do not hardcode any strings, why is it in caps
-//reduce size of blue indicator
-
-const screenStyle = { flex: 1, paddingTop: 48, paddingHorizontal: 24 };
+const screenStyle = { flex: 1, paddingTop: 48, paddingHorizontal: 14 };
+const indicatorStyle = {
+  backgroundColor: color.BLUE,
+  width: 76,
+  height: 3,
+  marginHorizontal: 30,
+};
 
 const FirstRoute = (date) => () =>
   (
@@ -32,17 +38,17 @@ const ThirdRoute = (date) => () =>
 const renderTabBar = (props) => (
   <TabBar
     {...props}
-    indicatorStyle={{ backgroundColor: "#0373F3" }}
-    style={{ backgroundColor: "white" }}
-    activeColor={"black"}
-    inactiveColor={"black"}
+    indicatorStyle={indicatorStyle}
+    style={{ backgroundColor: color.WHITE }}
+    activeColor={color.BLACK}
+    inactiveColor={color.BLACK}
     renderLabel={({ route }) => (
       <View>
         <Text
           style={{
-            fontWeight: 600,
+            fontFamily: fonts.POPPINS_SEMIBOLD,
             fontSize: 18,
-            color: "#000000",
+            color: color.BLACK,
             textAlign: "center",
             lineHeight: 27,
           }}
@@ -51,9 +57,9 @@ const renderTabBar = (props) => (
         </Text>
         <Text
           style={{
-            fontWeight: 400,
+            fontFamily: fonts.POPPINS_REGULAR,
             fontSize: 16,
-            color: "#B1B1B1",
+            color: color.METALLIC_SILVER,
             textAlign: "center",
             lineHeight: 24,
           }}
@@ -76,22 +82,22 @@ export default function TabScreen() {
   const [routes] = useState([
     {
       key: "first",
-      title: "Yesterday",
-      subtitle: `${prevDate.getDay()} ${new Intl.DateTimeFormat("en", {
+      title: names.YESTERDAY,
+      subtitle: `${prevDate.getDate()} ${new Intl.DateTimeFormat("en", {
         month: "short",
       }).format(prevDate)}`,
     },
     {
       key: "second",
-      title: "Today",
-      subtitle: `${currDate.getDay()} ${new Intl.DateTimeFormat("en", {
+      title: names.TODAY,
+      subtitle: `${currDate.getDate()} ${new Intl.DateTimeFormat("en", {
         month: "short",
       }).format(currDate)}`,
     },
     {
       key: "third",
-      title: "Tomorrow",
-      subtitle: `${nextDate.getDay()} ${new Intl.DateTimeFormat("en", {
+      title: names.TOMORROW,
+      subtitle: `${nextDate.getDate()} ${new Intl.DateTimeFormat("en", {
         month: "short",
       }).format(nextDate)}`,
     },
